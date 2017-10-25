@@ -1,22 +1,5 @@
 
-public class SinglyLinkedList {
-	// nested Node class
-	private static class Node {
-		private int element;	// reference to the element stored at this node
-		private Node next;		// reference to the subsequent node in the list
-		
-		public Node(int element, Node next) {
-			this.element = element;
-			this.next = next;
-		}
-		
-		// access and update methods
-		public int getElement() { return element; }
-		public Node getNext() { return next; }
-		public void setNext(Node next) { this.next = next; }
-	}
-	// end of nested Node class
-	
+public class SinglyLinkedList {	
 	private Node head = null;		// head node of the list ( or null if empty )
 	private Node tail = null;		// last node of the list ( or null if empty )
 	private int size = 0;			// number of nodes in the list
@@ -72,9 +55,4 @@ public class SinglyLinkedList {
 		
 		return firstElement;
 	}
-	
-	public static void main (String[] args) {
-		System.out.println("Singly Linked List class");
-	}
-	
 }
