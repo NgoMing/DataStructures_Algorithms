@@ -5,6 +5,13 @@ public class SinglyLinkedList {
 	private int size = 0;			// number of nodes in the list
 	public SinglyLinkedList() {}	// constructs an initially empty list
 	
+	/*
+	 * Constructor Singly Linked List with array param
+	 */
+	public SinglyLinkedList (int[] array) {
+		this.arrayToList(array);
+	}
+	
 	// access methods
 	public int size() { return this.size; }
 	public boolean isEmpty() { return this.size == 0; }
@@ -54,5 +61,33 @@ public class SinglyLinkedList {
 			this.tail = null;
 		
 		return firstElement;
+	}
+	
+	/*
+	 * convert array to Singly Linked List
+	 */
+	public void arrayToList (int[] array) {
+		while (!isEmpty()) {
+			this.removeFirst();
+		}
+		
+		for (int i = 0; i < array.length; i++) {
+			this.addLast(array[i]);
+		}
+	}
+	
+	/*
+	 * convert Singly Linked List to array
+	 */
+	public int[] listToArray() {
+		int[] array = new int[this.size];
+		Node node = head;
+		
+		for (int i = 0; i < array.length; i++) {
+			array[i] = node.getElement();
+			node = node.getNext();
+		}
+		
+		return array;
 	}
 }
