@@ -13,8 +13,8 @@ public class SinglyLinkedList {
 	}
 	
 	// access methods
-	public int size() { return this.size; }
-	public boolean isEmpty() { return this.size == 0; }
+	public int getSize() { return this.size; }
+	public boolean isEmpty() { return getSize() == 0; }
 	public int first() {
 		if (isEmpty()) return 0;
 		return head.getElement();

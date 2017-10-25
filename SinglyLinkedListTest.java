@@ -18,12 +18,12 @@ public class SinglyLinkedListTest {
 	@Test
 	public void shouldReturnSizeCorrectly() {
 		SinglyLinkedList myList = new SinglyLinkedList();
-		assertEquals(0,  myList.size());
+		assertEquals(0,  myList.getSize());
 		assertTrue(myList.isEmpty());
 		
 		int[] array = new int[]{1, 2, 3};
 		myList = new SinglyLinkedList(array);
-		assertEquals(array.length, myList.size());
+		assertEquals(array.length, myList.getSize());
 	}
 	
 	@Test
