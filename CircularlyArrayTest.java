@@ -48,5 +48,7 @@ public class CircularlyArrayTest {
 		
 		myArray = new CircularlyArray(new int[]{});
 		assertArrayEquals(new int[]{}, myArray.rotate(0).getElements());
+		assertArrayEquals(new int[]{}, myArray.rotate(5).getElements());
+		assertArrayEquals(new int[]{}, myArray.rotate(-5).getElements());
 	}
 }
