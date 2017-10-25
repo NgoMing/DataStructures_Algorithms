@@ -54,7 +54,6 @@ public class SinglyLinkedListTest {
 	public void shouldRemoveFirstCorrectly () {
 		int[] array = new int[]{2, 3, 4};
 		SinglyLinkedList sList = new SinglyLinkedList(array);
-		assertArrayEquals(array, sList.listToArray());
 		
 		array = new int[]{3, 4};
 		assertEquals(2, sList.removeFirst());
