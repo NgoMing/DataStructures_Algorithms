@@ -80,6 +80,9 @@ public class CircularlyLinkedList implements Rotateable<CircularlyLinkedList> {
 	 */
 	public int[] listToArray() {
 		int[] array = new int[this.size];
+		if (isEmpty())
+			return array;
+		
 		Node node = tail.getNext();
 		
 		for (int i = 0; i < array.length; i++) {
@@ -91,6 +94,10 @@ public class CircularlyLinkedList implements Rotateable<CircularlyLinkedList> {
 	}
 	
 	public CircularlyLinkedList rotate(int numOfStep) {
+		if (isEmpty())
+			return this;
+		
+		numOfStep = Utils.positiveModulos(numOfStep, this.size());
 		if (this.tail != null) {
 			for (int i = 0; i < numOfStep; i++)
 				this.tail = this.tail.getNext();
