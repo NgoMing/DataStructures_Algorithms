@@ -31,32 +31,18 @@ public class CircularlyArray implements Rotateable<CircularlyArray> {
 	}
 	
 	/*
-	 * positive modulo
-	 */
-	public int positiveModulos(int a, int b) {
-		if (b == 0)
-			throw new ArithmeticException();
-		
-		if (b < 0) {
-			a = -a;
-			b = -b;
-		}
-		return (((a % b) + b) % b);
-	}
-	
-	/*
 	 * Rotate the Array in left direction using temp array
 	 * Time complexity O(size)
 	 * Auxiliary space O(numOfStep)
 	 * @param numOfStep: the number of elements will be shifted, 
-	 * 					   negative for left rotation,
-	 * 					   positive for right rotation 
+	 * 					   positive for left rotation,
+	 * 					   negative for right rotation 
 	 */
 	@Override
 	public CircularlyArray rotate(int numOfStep) {
 	    int[] temArray = this.elements.clone();
 	    for (int i = 0; i < this.getSize(); i++) {
-	    	this.elements[positiveModulos(i + numOfStep, this.getSize())] = temArray[i];
+	    	this.elements[Utils.positiveModulos(i - numOfStep, this.getSize())] = temArray[i];
 	    }
 	    
 	    return this;
