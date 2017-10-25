@@ -9,7 +9,9 @@ public class SinglyLinkedList {
 	 * Constructor Singly Linked List with array param
 	 */
 	public SinglyLinkedList (int[] array) {
-		this.arrayToList(array);
+		for (int i = 0; i < array.length; i++) {
+			this.addLast(array[i]);
+		}
 	}
 	
 	// access methods
@@ -61,19 +63,6 @@ public class SinglyLinkedList {
 			this.tail = null;
 		
 		return firstElement;
-	}
-	
-	/*
-	 * convert array to Singly Linked List
-	 */
-	public void arrayToList (int[] array) {
-		while (!isEmpty()) {
-			this.removeFirst();
-		}
-		
-		for (int i = 0; i < array.length; i++) {
-			this.addLast(array[i]);
-		}
 	}
 	
 	/*

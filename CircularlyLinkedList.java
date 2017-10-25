@@ -9,7 +9,9 @@ public class CircularlyLinkedList implements Rotateable<CircularlyLinkedList> {
 	 * Constructor Singly Linked List with array param
 	 */
 	public CircularlyLinkedList (int[] array) {
-		this.arrayToList(array);
+		for (int i = 0; i < array.length; i++) {
+			this.addLast(array[i]);
+		}
 	}
 	
 	// access methods
@@ -60,19 +62,6 @@ public class CircularlyLinkedList implements Rotateable<CircularlyLinkedList> {
 			tail.setNext(head.getNext());
 		size --;
 		return head.getElement();
-	}
-	
-	/*
-	 * convert array to Singly Linked List
-	 */
-	public void arrayToList (int[] array) {
-		while (!isEmpty()) {
-			this.removeFirst();
-		}
-		
-		for (int i = 0; i < array.length; i++) {
-			this.addLast(array[i]);
-		}
 	}
 	
 	/*
