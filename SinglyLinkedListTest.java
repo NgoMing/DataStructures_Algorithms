@@ -69,4 +69,17 @@ public class SinglyLinkedListTest {
 	
 		assertEquals(0, sList.removeFirst());
 	}
+	
+	@Test
+	public void shouldCloneCorrectly() throws CloneNotSupportedException {
+		assertEquals(new SinglyLinkedList(new int[]{1, 2, 3}), new SinglyLinkedList(new int[]{1, 2, 3}).clone());
+		assertEquals(new SinglyLinkedList(new int[]{}), new SinglyLinkedList(new int[]{}).clone());
+	}
+	
+	@Test 
+	public void shouldEqualsCorrectly() {
+		assertEquals(new SinglyLinkedList(new int[]{2, 3, 4}), new SinglyLinkedList(new int[]{2, 3, 4}));
+		assertNotEquals(new SinglyLinkedList(new int[]{2, 3}), new SinglyLinkedList(new int[]{2, 3, 4}));
+		assertNotEquals(new SinglyLinkedList(new int[]{2, 3, 5}), new SinglyLinkedList(new int[]{2, 3, 4}));
+	}
 }
