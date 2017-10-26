@@ -1,5 +1,5 @@
 
-public class SinglyLinkedList {	
+public class SinglyLinkedList implements Cloneable{	
 	private Node head = null;		// head node of the list ( or null if empty )
 	private Node tail = null;		// last node of the list ( or null if empty )
 	private int size = 0;			// number of nodes in the list
@@ -78,5 +78,44 @@ public class SinglyLinkedList {
 		}
 		
 		return array;
+	}
+	
+	@Override
+	public SinglyLinkedList clone() throws CloneNotSupportedException {
+		SinglyLinkedList cloneList = (SinglyLinkedList)super.clone();
+		
+		if (getSize() > 0) {
+			cloneList.head = new Node(head.getElement(), null);
+			Node trackingNode = head.getNext();
+			Node cloneListTail = cloneList.head;
+			while (trackingNode != null) {
+				Node newNode = new Node(trackingNode.getElement(), null);
+				cloneListTail.setNext(newNode);
+				cloneListTail = newNode;
+				trackingNode = trackingNode.getNext();
+			}
+		}
+		
+		return cloneList;
+	}
+	
+	@Override
+	public boolean equals(Object o) {
+		if (o == null) return false;
+		if (this.getClass() != o.getClass()) return false;
+		
+		SinglyLinkedList other = (SinglyLinkedList)o;
+		if (this.getSize() != other.getSize()) return false;
+		
+		Node thisTrackingNode = this.head;
+		Node otherTrackingNode = other.head;
+		
+		while(thisTrackingNode != null) {
+			if (!(thisTrackingNode.getElement() == otherTrackingNode.getElement())) return false;
+			thisTrackingNode = thisTrackingNode.getNext();
+			otherTrackingNode = otherTrackingNode.getNext();
+		}
+		
+		return true;
 	}
 }
