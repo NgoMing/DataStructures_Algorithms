@@ -1,6 +1,9 @@
+package Test;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+
+import DataStructure.CircularlyArray;
 
 public class CircularlyArrayTest {
 

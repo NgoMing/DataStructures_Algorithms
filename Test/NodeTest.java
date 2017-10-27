@@ -1,6 +1,9 @@
+package Test;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+
+import DataStructure.Node;
 
 public class NodeTest {
 	

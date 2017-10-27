@@ -1,34 +1,37 @@
+package Test;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class SinglyLinkedListTest {
+import DataStructure.DoublyLinkedList;
+
+public class DoublyLinkedListTest {
 
 	@Test
 	public void shouldConstuctUsingArray() {
 		int[] array = new int[]{1, 2, 3};
-		SinglyLinkedList myList = new SinglyLinkedList(array);
+		DoublyLinkedList myList = new DoublyLinkedList(array);
 		assertArrayEquals(array, myList.listToArray());
 		
 		array = new int[3];
-		myList = new SinglyLinkedList(array);
+		myList = new DoublyLinkedList(array);
 		assertArrayEquals(array, myList.listToArray());		
 	}
 	
 	@Test
 	public void shouldReturnSizeCorrectly() {
-		SinglyLinkedList myList = new SinglyLinkedList();
+		DoublyLinkedList myList = new DoublyLinkedList();
 		assertEquals(0,  myList.getSize());
 		assertTrue(myList.isEmpty());
 		
 		int[] array = new int[]{1, 2, 3};
-		myList = new SinglyLinkedList(array);
+		myList = new DoublyLinkedList(array);
 		assertEquals(array.length, myList.getSize());
 	}
 	
 	@Test
 	public void shouldAddFirstCorrectly() {
-		SinglyLinkedList myList = new SinglyLinkedList();
+		DoublyLinkedList myList = new DoublyLinkedList();
 		myList.addFirst(12);
 		assertEquals(12, myList.first());
 		assertEquals(12, myList.last());
@@ -40,7 +43,7 @@ public class SinglyLinkedListTest {
 	
 	@Test
 	public void shouldAddLastCorrectly() {
-		SinglyLinkedList myList = new SinglyLinkedList();
+		DoublyLinkedList myList = new DoublyLinkedList();
 		myList.addLast(12);
 		assertEquals(12, myList.first());
 		assertEquals(12, myList.last());
@@ -53,7 +56,7 @@ public class SinglyLinkedListTest {
 	@Test
 	public void shouldRemoveFirstCorrectly () {
 		int[] array = new int[]{2, 3, 4};
-		SinglyLinkedList sList = new SinglyLinkedList(array);
+		DoublyLinkedList sList = new DoublyLinkedList(array);
 		
 		array = new int[]{3, 4};
 		assertEquals(2, sList.removeFirst());
@@ -71,15 +74,22 @@ public class SinglyLinkedListTest {
 	}
 	
 	@Test
-	public void shouldCloneCorrectly() throws CloneNotSupportedException {
-		assertEquals(new SinglyLinkedList(new int[]{1, 2, 3}), new SinglyLinkedList(new int[]{1, 2, 3}).clone());
-		assertEquals(new SinglyLinkedList(new int[]{}), new SinglyLinkedList(new int[]{}).clone());
-	}
+	public void shouldRemoveLastCorrectly () {
+		int[] array = new int[]{2, 3, 4};
+		DoublyLinkedList sList = new DoublyLinkedList(array);
+		
+		array = new int[]{2, 3};
+		assertEquals(4, sList.removeLast());
+		assertArrayEquals(array, sList.listToArray());
+		
+		array = new int[]{2};
+		assertEquals(3, sList.removeLast());
+		assertArrayEquals(array, sList.listToArray());
+		
+		array = new int[]{};
+		assertEquals(2, sList.removeLast());
+		assertArrayEquals(array, sList.listToArray());
 	
-	@Test 
-	public void shouldEqualsCorrectly() {
-		assertEquals(new SinglyLinkedList(new int[]{2, 3, 4}), new SinglyLinkedList(new int[]{2, 3, 4}));
-		assertNotEquals(new SinglyLinkedList(new int[]{2, 3}), new SinglyLinkedList(new int[]{2, 3, 4}));
-		assertNotEquals(new SinglyLinkedList(new int[]{2, 3, 5}), new SinglyLinkedList(new int[]{2, 3, 4}));
+		assertEquals(0, sList.removeLast());
 	}
 }

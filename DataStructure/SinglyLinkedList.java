@@ -1,3 +1,4 @@
+package DataStructure;
 
 public class SinglyLinkedList implements Cloneable{	
 	private Node head = null;		// head node of the list ( or null if empty )

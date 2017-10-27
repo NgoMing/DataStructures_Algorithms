@@ -1,3 +1,4 @@
+package DataStructure;
 
 public class DoubledNode {
 	private int element;		// reference to the element stored at this node
