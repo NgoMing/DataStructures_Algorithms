@@ -1,7 +1,7 @@
 package DataStructure;
-import MyInterfaces.Rotateable;
+import MyInterfaces.IRotateable;
 
-public class CircularlyArray implements Rotateable<CircularlyArray> {
+public class CircularlyArray implements IRotateable<CircularlyArray> {
 	int[] elements;
 	
 	/*

@@ -1,8 +1,8 @@
 package DataStructure;
 
-import MyInterfaces.Stack;
+import MyInterfaces.IStack;
 
-public class ArrayStack implements Stack{
+public class ArrayStack implements IStack{
 	public static final int CAPACITY = 1000;	// default array capacity
 	private int[] data;							// data used for storage
 	private int topIndex = -1;					// index of the top element in stack

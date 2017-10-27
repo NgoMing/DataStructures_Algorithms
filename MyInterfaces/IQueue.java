@@ -1,6 +1,6 @@
 package MyInterfaces;
 
-public interface Queue {
+public interface IQueue {
 	/*
 	 * Returns the number of the elements in the queue
 	 */

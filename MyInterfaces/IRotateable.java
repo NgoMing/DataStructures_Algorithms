@@ -1,5 +1,5 @@
 package MyInterfaces;
 
-public interface Rotateable<E> {
+public interface IRotateable<E> {
 	public E rotate(int numOfStep);
 }

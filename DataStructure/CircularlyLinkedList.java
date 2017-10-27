@@ -1,7 +1,7 @@
 package DataStructure;
-import MyInterfaces.Rotateable;
+import MyInterfaces.IRotateable;
 
-public class CircularlyLinkedList implements Rotateable<CircularlyLinkedList> {
+public class CircularlyLinkedList implements IRotateable<CircularlyLinkedList> {
 	private Node tail = null;	// last node of the list
 	private int size = 0;		// number of nodes in the list
 	public CircularlyLinkedList() {}	// constructs an initially empty list

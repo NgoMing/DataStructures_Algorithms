@@ -1,9 +1,9 @@
 package DataStructure;
 
-import MyInterfaces.Queue;
+import MyInterfaces.IQueue;
 
-public class ArrayQueue implements Queue{
-	final static int CAPACITY = 1000;	// default value of capacity
+public class ArrayQueue implements IQueue{
+	public static final int CAPACITY = 1000;	// default value of capacity
 	
 	private int[] data;		// data array used for storage
 	private int frontIndex;	// index of the front element
@@ -20,6 +20,7 @@ public class ArrayQueue implements Queue{
 	public ArrayQueue(int capacity) { data = new int[capacity]; }
 	
 	// Access methods
+	public int[] getData() { return data; } // Use for test
 	public int size() { return size; }
 	public boolean isEmpty() { return (size == 0); }
 	public int first() {

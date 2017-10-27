@@ -1,6 +1,6 @@
 package MyInterfaces;
 
-public interface Stack {
+public interface IStack {
 	/*
 	 * Returns the number of elements in the stack.
 	 * @return number of elements in the stacks
